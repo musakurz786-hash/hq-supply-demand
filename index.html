@@ -1916,7 +1916,7 @@
 
     document.getElementById('cr-about').replaceChildren(...[
       'Source: Aramex shipment export “' + rep.source + '”, ' + fmtInt(rep.rows) + ' waybills from ' + rep.from + ' to ' + rep.to + ', ' + fmtR(rep.total) + ' billed (the TotalAmount column).',
-      'Shipment types come from the file’s own type column. IBT waybills are matched to HQ and to Cin7 store names from the shipper and consignee; ones that can’t be matched (other businesses, FOM sites named only by city) are “IBT account: other”.',
+      'Shipment types come from the file’s own type column. IBT waybills are matched to HQ and to Cin7 store names from the shipper and consignee; ones that can’t be matched (other businesses, our own sites named only by city) are “IBT account: other”.',
       'Cost per IBT: ' + fmtInt(rep.tr_matched) + ' of ' + fmtInt(rep.tr_considered) + ' Cin7 IBTs to stores in 2026 were found on an Aramex waybill. Cape Town-area stores (Canal Walk, Kloof, V&A, Laborie, Tygervalley, Dorp Street, Cavendish, Somerset) are supplied by FOM’s own bakkie and only now and then by Aramex, so they are marked “Own bakkie” and left out of the cost per unit and the match rate. Garden Route and Hermanus go by Aramex. Bakkie costs aren’t in this data.',
       'The IBT account has almost no waybills in September and October 2025, so those months are missing from IBT costs.',
       'Customer names and addresses in the Aramex file are not stored here. Only totals per day, type and province are kept, plus store-level IBT waybills.',

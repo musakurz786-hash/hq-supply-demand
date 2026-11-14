@@ -602,7 +602,7 @@
   const STORE_LL = [['Sandton', 28.053, -26.108], ['Hazelwood', 28.256, -25.771], ['Menlyn', 28.276, -25.783], ['Castle Gate', 28.24, -25.8], ['Mall of Africa', 28.106, -26.015],
     ['Walmer Park', 25.565, -33.985], ['Mooi Rivier', 27.098, -26.716], ['Garden Route', 22.457, -33.968], ['Rosebank', 28.042, -26.146], ['Ballito', 31.214, -29.533],
     ['Clearwater', 27.904, -26.128], ['Gateway', 31.067, -29.727], ['Bloemfontein', 26.215, -29.08], ['Cresta', 27.973, -26.13], ['Ilanga', 30.985, -25.465],
-    ['Fourways', 28.006, -26.018], ['Morningside', 28.058, -26.075], ['Mall of the North', 29.506, -23.88], ['FOM Pavilion', 30.936, -29.849], ['Hermanus', 19.235, -34.418],
+    ['Fourways', 28.006, -26.018], ['Morningside', 28.058, -26.075], ['Mall of the North', 29.506, -23.88], ['Pavilion (New)', 30.936, -29.849], ['Hermanus', 19.235, -34.418],
     ['Dorp Street', 18.861, -33.938], ['Canal Walk', 18.512, -33.893], ['V&A', 18.42, -33.903], ['Somerset', 18.85, -34.073], ['Laborie', 18.958, -33.761],
     ['Tygervalley', 18.633, -33.874], ['Kloof', 18.41, -33.932], ['Cavendish', 18.465, -33.981], ['Atterbury', 28.315, -25.783], ['Woodlands', 28.297, -25.817],
     ['Hydepark', 28.035, -26.125], ['Hyde Park', 28.035, -26.125], ['Nicolway', 28.026, -26.058]];
@@ -1071,7 +1071,7 @@
     if (!ibt.length) ibtBox.replaceChildren(el('p', 'fm-note', 'No IBT-account waybills in these months.'));
     else acctMap(ibtBox, G, { pv: provOf('IBT'), dots: dots.filter((o) => !o.hq), flows, hq: true, fmtM, unit, label: 'Map of IBT account waybills: receiving sites and where the stock came from' });
     const tI = d3.sum(to, (o) => o.v) || 1;
-    bars('am-ibt-list', to.slice(0, 10).map((o) => ({ key: o.name, label: o.name === 'Other' ? 'Other (not an FOM store)' : short(o.name), value: o.v, text: fmtM(o.v) + ' · ' + pct(o.v / tI) })),
+    bars('am-ibt-list', to.slice(0, 10).map((o) => ({ key: o.name, label: o.name === 'Other' ? 'Other (not one of our stores)' : short(o.name), value: o.v, text: fmtM(o.v) + ' · ' + pct(o.v / tI) })),
       { color: PAL[3], empty: 'No IBT-account waybills in these months.' });
 
     // 250 account: provinces only (customer addresses are never loaded)
