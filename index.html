@@ -86,7 +86,7 @@
     }
     window.addEventListener('resize', () => { clearTimeout(window.__rz); window.__rz = setTimeout(run, 150); });
     // Demo sign-in. GitHub Pages is static and public, so this only keeps casual visitors out; the data behind it is made up anyway.
-    const LOGIN = {"salt":"240ac3f81453c59ce2c0f93bf65815ba","iter":150000,"hash":"9c02660901b781b8c67c96c42795e86243287fb49eb737acad8d7fed62f6b564"};
+    const LOGIN = {"salt":"ab111d3346f49b944134b430357d8e64","iter":150000,"hash":"9ed2de19e5b1ad94e75c61a94b28c86a31d02633e4fa5a66f4ad9e42e18818f0"};
     async function check(email, pw) {
       const enc = new TextEncoder(), key = await crypto.subtle.importKey('raw', enc.encode(email.trim().toLowerCase() + '\n' + pw), 'PBKDF2', false, ['deriveBits']);
       const bits = await crypto.subtle.deriveBits({ name: 'PBKDF2', hash: 'SHA-256', salt: enc.encode(LOGIN.salt), iterations: LOGIN.iter }, key, 256);
