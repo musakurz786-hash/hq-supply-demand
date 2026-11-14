@@ -189,7 +189,7 @@
     {
       const s = new Slide();
       s.rect(0, 0, 640080, SH, C.teal); s.rect(640080, 0, 91440, SH, '59C4BC');
-      s.text(1100000, 1500000, SW - 1600000, 380000, [para(run('FREEDOM OF MOVEMENT · HQ DISTRIBUTION CENTRE', { sz: 12, b: true, color: '1A6F69' }))]);
+      s.text(1100000, 1500000, SW - 1600000, 380000, [para(run('SOFIA AND SPIRITZ · HQ DISTRIBUTION CENTRE', { sz: 12, b: true, color: '1A6F69' }))]);
       s.text(1100000, 1950000, SW - 1600000, 1100000, [para(run('HQ Stock Movements', { sz: 40, b: true })), para(run(all ? 'Full report · every tab except Courier costs' : reportName, { sz: 26, color: C.grey }))]);
       s.text(1100000, 3400000, SW - 1600000, 1800000, [para(run(fresh, { sz: 13 })), para(run('Filters: ' + filters, { sz: 13, color: C.grey })), para(run('Exported ' + stamp + ' from the HQ stock dashboard', { sz: 11, color: C.muted }))]);
       if (take && (all || (start !== 'courier' && start !== 'peak'))) s.text(1100000, 5200000, SW - 1600000, 900000, [para(run(take, { sz: 12, color: C.navy }))], { fill: C.band, inset: 91440 });
